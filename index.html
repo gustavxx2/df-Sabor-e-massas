@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0D0D0D">
+<title>D&amp;F Sabor &amp; Massas Pastelaria</title>
+<meta name="description" content="Pastéis de 30 cm feitos na hora. Peça pelo iFood, 99Food ou WhatsApp. Delivery em Salvador.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0D0D0D; --card:#181818; --line:#2A2A2A; --text:#F5F2EC; --muted:#9A958C;
+  --orange:#FF7A1A; --yellow:#FFC21A;
+  color-scheme:dark;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.45;-webkit-font-smoothing:antialiased}
+body.lock{overflow:hidden}
+.wrap{width:100%;max-width:520px;margin:0 auto;min-height:100vh;min-height:100dvh;padding:56px 22px 36px;display:flex;flex-direction:column}
+.mark{font-weight:800;font-size:clamp(72px,24vw,108px);line-height:.85;letter-spacing:-.05em;margin:0;color:var(--yellow)}
+.name{font-weight:700;font-size:21px;margin:16px 0 0;letter-spacing:-.01em}
+.tag{margin:6px 0 0;font-size:16px;color:var(--muted);max-width:32ch}
+.rule{height:3px;width:44px;background:var(--orange);border:0;border-radius:2px;margin:28px 0}
+h2{font-size:15px;font-weight:500;margin:0 0 12px;color:var(--muted)}
+.btns{display:grid;gap:10px}
+.btn{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:14px;text-decoration:none;font-weight:700;font-size:18px;color:var(--text);background:var(--card);border:1px solid var(--line);width:100%;cursor:pointer;font-family:inherit;text-align:left;transition:border-color .15s,transform .12s}
+.btn:hover{border-color:var(--orange)}
+.btn:active{transform:scale(.98)}
+.btn small{display:block;font-weight:400;font-size:13px;color:var(--muted);margin-top:1px}
+.btn svg{width:26px;height:26px;flex:none;color:var(--orange)}
+.btn .go{margin-left:auto;width:20px;height:20px;color:var(--muted)}
+.logo{width:56px;height:40px;border-radius:10px;display:grid;place-items:center;flex:none;font-weight:800;letter-spacing:-.04em}
+.btn .logo svg{width:26px;height:26px}
+.btn.ifood{background:#EA1D2C;border-color:#EA1D2C;color:#fff}
+.btn.ifood .logo{background:#fff;color:#EA1D2C;font-size:17px;font-style:italic}
+.btn.n99{background:#FFD400;border-color:#FFD400;color:#111}
+.btn.n99 .logo{background:#111;color:#FFD400;font-size:22px}
+.btn.wpp{background:#25D366;border-color:#25D366;color:#06210F}
+.btn.wpp .logo{background:#fff;color:#1FAF54}
+.btn.ifood small{color:rgba(255,255,255,.85)}
+.btn.n99 small,.btn.wpp small{color:rgba(0,0,0,.65)}
+.btn.ifood .go,.btn.n99 .go,.btn.wpp .go{color:currentColor;opacity:.7}
+.btn.ifood:hover,.btn.n99:hover,.btn.wpp:hover{filter:brightness(1.08)}
+.menu-cta{margin-top:32px;padding:22px;border-radius:18px;border:1px solid var(--line)}
+.menu-cta p{margin:0;font-weight:700;font-size:21px;letter-spacing:-.01em}
+.menu-cta span{display:block;color:var(--muted);font-size:15px;margin:2px 0 16px}
+.menu-cta .btn{background:var(--yellow);border-color:var(--yellow);color:#0D0D0D;justify-content:center;text-align:center;font-size:17px}
+.menu-cta .btn:hover{background:var(--orange);border-color:var(--orange)}
+footer{margin-top:auto;padding-top:36px;font-size:14px;color:var(--muted)}
+footer a{color:var(--text);font-weight:700;text-decoration:none;border-bottom:2px solid var(--orange)}
+.btn:focus-visible,a:focus-visible,.chip:focus-visible,.x:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+
+dialog{border:1px solid var(--line);padding:0;margin:auto auto 0;width:100%;max-width:520px;max-height:90vh;max-height:90dvh;border-radius:24px 24px 0 0;background:var(--bg);color:var(--text);overflow:hidden}
+dialog[open]{display:flex;flex-direction:column;animation:up .22s ease-out}
+dialog::backdrop{background:rgba(0,0,0,.72)}
+@keyframes up{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}
+@media (min-width:640px){dialog{margin:auto;border-radius:24px;max-height:85vh;max-height:85dvh}}
+@media (prefers-reduced-motion:reduce){dialog[open]{animation:none}.btn{transition:none}}
+.top{display:flex;align-items:center;justify-content:space-between;padding:20px 22px 10px}
+.top h3{margin:0;font-size:24px;letter-spacing:-.02em}
+.x{border:1px solid var(--line);background:var(--card);color:var(--text);width:40px;height:40px;border-radius:50%;font-size:22px;line-height:1;cursor:pointer}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 22px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:transparent;color:var(--text);padding:9px 16px;border-radius:99px;font:500 15px "Bricolage Grotesque",system-ui,sans-serif;cursor:pointer}
+.chip:hover{border-color:var(--yellow);color:var(--yellow)}
+.scroll{overflow-y:auto;overscroll-behavior:contain;padding:0 22px 30px;border-top:1px solid var(--line);flex:1;-webkit-overflow-scrolling:touch}
+.sec{padding-top:24px}
+.sec h4{margin:0;font-size:20px;letter-spacing:-.01em;color:var(--yellow)}
+.sec .note{margin:2px 0 6px;font-size:14px;color:var(--muted)}
+.item{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:16px}
+.item:last-child{border-bottom:0}
+.price{font-weight:700;white-space:nowrap;color:var(--orange)}
+.fine{margin:24px 0 0;font-size:13px;color:var(--muted)}
+@media (max-width:360px){.wrap{padding:44px 16px 28px}.btn{font-size:16px;padding:14px}.item{font-size:15px}}
+@media (min-width:900px){.wrap{padding-top:88px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1 class="mark" aria-label="D&amp;F">D&amp;F</h1>
+    <p class="name">Sabor &amp; Massas Pastelaria</p>
+    <p class="tag">Pastéis de 30 cm feitos na hora. Delivery em Salvador.</p>
+  </header>
+  <hr class="rule">
+  <main>
+    <h2>Peça agora</h2>
+    <div class="btns">
+      <a class="btn ifood" id="lnk-ifood" href="#" target="_blank" rel="noopener">
+        <span class="logo" aria-hidden="true">ifood</span>
+        <span>iFood<small>Entrega pelo app</small></span>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </a>
+      <a class="btn n99" id="lnk-99" href="#" target="_blank" rel="noopener">
+        <span class="logo" aria-hidden="true">99</span>
+        <span>99Food<small>Entrega pelo app</small></span>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </a>
+      <a class="btn wpp" id="lnk-wpp" href="#" target="_blank" rel="noopener">
+        <span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/><path d="M9.2 8.6c.5 2.4 2.8 4.8 5.8 5.8l1.4-1.4-1.9-1-1 .8c-.9-.4-1.7-1.2-2.1-2.1l.8-1-1-1.9-2 .8Z" fill="currentColor" stroke="none"/></svg></span>
+        <span>WhatsApp<small>Fale direto com a gente</small></span>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </a>
+    </div>
+    <div class="menu-cta">
+      <p>Quer olhar o cardápio?</p>
+      <span>Veja os sabores e os preços sem abrir o app.</span>
+      <button class="btn" id="open-menu" type="button" aria-haspopup="dialog">Ver cardápio</button>
+    </div>
+  </main>
+  <footer><a id="lnk-ig" href="https://www.instagram.com/dfsaboremassa" target="_blank" rel="noopener">@dfsaboremassa</a></footer>
+</div>
+
+<dialog id="menu" aria-labelledby="menu-title">
+  <div class="top">
+    <h3 id="menu-title">Cardápio</h3>
+    <button class="x" id="close-menu" type="button" aria-label="Fechar cardápio">&times;</button>
+  </div>
+  <div class="chips" id="chips"></div>
+  <div class="scroll" id="scroll"></div>
+</dialog>
+
+<script>
+// ====== EDITE AQUI ======
+var CONFIG = {
+  ifood: "https://ifood.com.br/delivery/salvador-ba/df-sabor--massas-boa-vista-do-lobato/74cf43bb-4f57-492c-8795-a3c6030a32f6?UTM_Medium=share",
+  n99: "https://oia.99app.com/dlp9/3SYYay?area=BR",
+  whatsapp: "5571984278784",
+  msg: "Oi! Vim pelo cardápio da D&F e quero fazer um pedido 😊"
+};
+var MENU = [
+  {id:"salgados", title:"Salgados", note:"Pastel grande de 30 cm", items:[
+    ["Calabresa","19,29"],["Calabresa com queijo","22,39"],["Frango","17,99"],["Frango com queijo","20,29"],
+    ["Frango com catupiry","21,59"],["Frango com milho","19,79"],["Frango com cheddar","22,39"],["Carne","24,49"],
+    ["Carne com queijo","27,49"],["Carne com cheddar","27,99"],["Carne com cream cheese","28,99"],
+    ["Queijo e presunto","19,99"],["Pizza","18,49"],["X-Tudão Pitbull","35,69"]]},
+  {id:"doces", title:"Doces", note:"Pastel grande de 30 cm", items:[
+    ["Romeu e Julieta","19,49"],["Romeu e Julieta com cream cheese","21,99"]]},
+  {id:"familia", title:"Combo família", note:"Refrigerante de 1 L grátis", items:[
+    ["2 pizza","44,79"],["2 frango com catupiry","50,69"],["2 calabresa com queijo","50,29"],
+    ["1 frango com catupiry + 1 frango com cheddar","52,19"],["1 frango com catupiry + 1 carne com queijo","56,49"],
+    ["2 carne com queijo","59,59"],["2 carne com cream cheese","67,19"]]},
+  {id:"individual", title:"Combo individual", note:"Refrigerante lata 350 ml grátis", items:[
+    ["Pizza","24,49"],["Frango com milho","24,39"],["Frango","25,29"],["Frango com catupiry","26,99"],
+    ["Calabresa com queijo","28,19"],["Carne com queijo","32,89"],["X-Tudão Pitbull","52,99"]]},
+  {id:"bebidas", title:"Bebidas", note:"", items:[
+    ["Refrigerante Coca-Cola sem açúcar lata 350 ml","8,49"],["Refrigerante Pepsi 1 L","9,99"],
+    ["51 Ice Balada","8,90"],["51 Ice Fruit Mix","8,90"],["51 Ice Kiwi","8,90"]]}
+];
+document.getElementById("lnk-ifood").href = CONFIG.ifood;
+document.getElementById("lnk-99").href = CONFIG.n99;
+document.getElementById("lnk-wpp").href = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(CONFIG.msg);
+var chips = document.getElementById("chips"), scroll = document.getElementById("scroll");
+MENU.forEach(function(s){
+  var b = document.createElement("button");
+  b.type = "button"; b.className = "chip"; b.textContent = s.title;
+  b.onclick = function(){
+    var t = document.getElementById("s-"+s.id);
+    scroll.scrollTo({top: t.offsetTop - scroll.offsetTop, behavior: matchMedia("(prefers-reduced-motion:reduce)").matches ? "auto" : "smooth"});
+  };
+  chips.appendChild(b);
+  var sec = document.createElement("section");
+  sec.className = "sec"; sec.id = "s-"+s.id;
+  var h = "<h4>"+s.title+"</h4>" + (s.note ? "<p class='note'>"+s.note+"</p>" : "");
+  s.items.forEach(function(i){ h += "<div class='item'><span>"+i[0]+"</span><span class='price'>R$ "+i[1]+"</span></div>"; });
+  sec.innerHTML = h;
+  scroll.appendChild(sec);
+});
+var fine = document.createElement("p");
+fine.className = "fine";
+fine.textContent = "Os valores podem variar nos aplicativos de entrega.";
+scroll.appendChild(fine);
+var dlg = document.getElementById("menu");
+function closeM(){ dlg.close(); }
+document.getElementById("open-menu").onclick = function(){ dlg.showModal(); document.body.classList.add("lock"); scroll.scrollTop = 0; };
+document.getElementById("close-menu").onclick = closeM;
+dlg.addEventListener("close", function(){ document.body.classList.remove("lock"); });
+dlg.addEventListener("click", function(e){ if(e.target === dlg) closeM(); });
+</script>
+</body>
+</html>
