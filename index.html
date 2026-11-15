@@ -57,11 +57,11 @@ footer{margin-top:auto;padding-top:36px;font-size:14px;color:var(--muted)}
 footer a{color:var(--text);font-weight:700;text-decoration:none;border-bottom:2px solid var(--orange)}
 .btn:focus-visible,a:focus-visible,.chip:focus-visible,.x:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 
-dialog{border:1px solid var(--line);padding:0;margin:auto auto 0;width:100%;max-width:520px;max-height:90vh;max-height:90dvh;border-radius:24px 24px 0 0;background:var(--bg);color:var(--text);overflow:hidden}
+dialog{border:1px solid var(--line);padding:0;margin:auto auto 0;width:100%;max-width:520px;height:88vh;height:88dvh;border-radius:24px 24px 0 0;background:var(--bg);color:var(--text);overflow:hidden}
 dialog[open]{display:flex;flex-direction:column;animation:up .22s ease-out}
 dialog::backdrop{background:rgba(0,0,0,.72)}
 @keyframes up{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}
-@media (min-width:640px){dialog{margin:auto;border-radius:24px;max-height:85vh;max-height:85dvh}}
+@media (min-width:640px){dialog{margin:auto;border-radius:24px;height:80vh;height:80dvh;max-height:760px}}
 @media (prefers-reduced-motion:reduce){dialog[open]{animation:none}.btn{transition:none}}
 .top{display:flex;align-items:center;justify-content:space-between;padding:20px 22px 10px}
 .top h3{margin:0;font-size:24px;letter-spacing:-.02em}
@@ -70,8 +70,8 @@ dialog::backdrop{background:rgba(0,0,0,.72)}
 .chips::-webkit-scrollbar{display:none}
 .chip{flex:none;border:1px solid var(--line);background:transparent;color:var(--text);padding:9px 16px;border-radius:99px;font:500 15px "Bricolage Grotesque",system-ui,sans-serif;cursor:pointer}
 .chip:hover{border-color:var(--yellow);color:var(--yellow)}
-.scroll{overflow-y:auto;overscroll-behavior:contain;padding:0 22px 30px;border-top:1px solid var(--line);flex:1;-webkit-overflow-scrolling:touch}
-.sec{padding-top:24px}
+.top,.chips{flex:none}
+.scroll{overflow-y:auto;overscroll-behavior:contain;padding:0 22px calc(30px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);flex:1 1 0;min-height:0;-webkit-overflow-scrolling:touch}
 .sec h4{margin:0;font-size:20px;letter-spacing:-.01em;color:var(--yellow)}
 .sec .note{margin:2px 0 6px;font-size:14px;color:var(--muted)}
 .item{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:16px}
